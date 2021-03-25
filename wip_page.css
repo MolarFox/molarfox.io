@@ -9,12 +9,12 @@
 }
 
 h1 {
-    font-size: 44px;
+    font-size: 4vh;
 }
 
 h3 {
     font-family: Fundamental_Brigade, Arial, Georgia, sans-serif;
-    font-size: 22px;
+    font-size: 2.5vh;
 }
 
 body {
@@ -22,6 +22,8 @@ body {
     min-height: 100vh;
     height: 100%;
     font-family: Fundamental_Brigade, Arial, Georgia, sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 .title_div {
