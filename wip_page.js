@@ -27,7 +27,6 @@ rand_images = [
 // pick a random line in the array and set new img src to it
 function change_randimage(){
     let randindex = Math.floor(Math.random() * rand_images.length)
-    console.log(randindex);
     document.getElementById("wip_image").src = rand_images[randindex][0];
     document.getElementById("wip_image").type = rand_images[randindex][1];
 }
