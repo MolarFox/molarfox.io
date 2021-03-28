@@ -29,19 +29,19 @@ body {
 .title_div {
     margin-left: auto;
     margin-right: auto;
-    max-width: max(50vw, 225px);
+    max-width: max(50vw, 375px);
     font-family: Unbuttoned, Arial, Georgia, sans-serif;
 }
 
 .img_div {
-    max-width: max(50vw, 225px);
+    max-width: max(50vw, 375px);
     margin-left: auto;
     margin-right: auto;
 }
 
 #wip_image {
     background-color: #333333;
-    max-width: max(50vw, 225px);
+    max-width: max(50vw, 300px);
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 25px;
