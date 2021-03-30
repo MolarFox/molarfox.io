@@ -21,7 +21,22 @@ rand_images = [
     ["images/Thumbs_up_face.jpg", "image/jpg"],    
     ["images/160602383_4246757335351691_5420248383985894955_n.jpg", "image/jpg"],
     ["images/161464189_1805433972945454_6419209424019966750_o.jpg", "image/jpg"],
-    ["images/162541924_1372328036456554_8276098036281206121_o.jpg", "image/jpg"]
+    ["images/162541924_1372328036456554_8276098036281206121_o.jpg", "image/jpg"],
+    ["images/117762834_3800542549975574_7605058603396209488_o.jpg", "image/jpg"],
+    ["images/118172049_10158746152465116_6726853270469485011_n.jpg", "image/jpg"],
+    ["images/124196229_378027190106398_4232180002568034892_n.jpg", "image/jpg"],
+    ["images/150446709_690976534916397_8886513010678979378_n.jpg", "image/jpg"],
+    ["images/150527699_2879025009084341_2808040234205625256_o.jpg", "image/jpg"],
+    ["images/83684558_2511927912452648_4618232287320544323_n.jpg", "image/jpg"],
+    ["images/94385136_1341622749368097_6339494513421058048_n.jpg", "image/jpg"],
+    ["images/EcVPeplWkAE582d.jpg", "image/jpg"],
+    ["images/HARDHATS.gif", "image/gif"],
+    ["images/linux feed the void.png", "image/jpg"],
+    ["images/Mae and Gregg Awoo.jpg", "image/jpg"],
+    ["images/meat cd time.jpg", "image/jpg"],
+    ["images/Trash Fox.jpg", "image/jpg"],
+    ["images/uwld18cvysy21.jpg", "image/jpg"],
+    ["images/Wild dogs slepp.jpg", "image/jpg"]
 ];
 
 // pick a random line in the array and set new img src to it
