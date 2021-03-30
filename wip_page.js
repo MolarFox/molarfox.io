@@ -33,7 +33,6 @@ rand_images = [
     ["images/HARDHATS.gif", "image/gif"],
     ["images/linux feed the void.png", "image/jpg"],
     ["images/Mae and Gregg Awoo.jpg", "image/jpg"],
-    ["images/meat cd time.jpg", "image/jpg"],
     ["images/Trash Fox.jpg", "image/jpg"],
     ["images/uwld18cvysy21.jpg", "image/jpg"],
     ["images/Wild dogs slepp.jpg", "image/jpg"]
