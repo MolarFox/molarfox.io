@@ -45,7 +45,7 @@ body {
 
 #wip_image {
     background-color: #333333;
-    max-width: max(50vw, 300px);
+    max-width: max(28vw, 320px);
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 25px;
