@@ -31,7 +31,7 @@ rand_images = [
     ["images/94385136_1341622749368097_6339494513421058048_n.jpg", "image/jpg"],
     ["images/EcVPeplWkAE582d.jpg", "image/jpg"],
     ["images/HARDHATS.gif", "image/gif"],
-    ["images/linux feed the void.png", "image/jpg"],
+    ["images/linux feed the void.jpg", "image/jpg"],
     ["images/Mae and Gregg Awoo.jpg", "image/jpg"],
     ["images/Trash Fox.jpg", "image/jpg"],
     ["images/uwld18cvysy21.jpg", "image/jpg"],
