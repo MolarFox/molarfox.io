@@ -38,11 +38,25 @@ rand_images = [
     ["images/Wild dogs slepp.jpg", "image/jpg"]
 ];
 
-// pick a random line in the array and set new img src to it
-function change_randimage(){
-    let randindex = Math.floor(Math.random() * rand_images.length)
-    document.getElementById("wip_image").src = rand_images[randindex][0];
-    document.getElementById("wip_image").type = rand_images[randindex][1];
+// Pick a random line in the array and set new img src to it
+function set_image(img_index=Math.floor(Math.random() * rand_images.length)){
+    location.hash = String(img_index);
+    document.getElementById("wip_image").src = rand_images[img_index][0];
+    document.getElementById("wip_image").type = rand_images[img_index][1];
 }
 
-change_randimage();
+// Parse URL fragment on page load and take appropriate action
+function check_fragment(){
+    let img_id = parseInt(location.hash.slice(1));
+
+    // If fragment index is valid, display image at that index - else pick a random one
+    if ((img_id != NaN) && (img_id >= 0) && (img_id < rand_images.length)){
+       set_image(img_id);
+    }else{
+        set_image();
+    }
+}
+
+check_fragment();
+
+window.onhashchange = check_fragment;
