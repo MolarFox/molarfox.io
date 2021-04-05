@@ -1,11 +1,17 @@
 @font-face{
-    font-family: Fundamental_Brigade;
-    src: url(fonts/fundamental-brigade.woff)
+    font-family: liberation_sans;
+    src: url(fonts/liberation_sans/LiberationSans-Regular.woff2)
+}
+
+@font-face{
+  font-family: liberation_sans;
+  src: url(fonts/liberation_sans/LiberationSans-Bold.woff2);
+  font-weight: bold;
 }
 
 @font-face{
     font-family: Unbuttoned;
-    src: url(fonts/unbutton.woff);
+    src: url(fonts/unbutton.woff2);
 }
 
 h1 {
@@ -13,7 +19,7 @@ h1 {
 }
 
 h3 {
-    font-family: Fundamental_Brigade, Arial, Georgia, sans-serif;
+    font-family: liberation_sans, Arial, Georgia, sans-serif;
     font-size: 2.5vh;
 }
 
@@ -21,7 +27,7 @@ body {
     background-image: linear-gradient(45deg, #333333, #ea5f29);
     min-height: 100vh;
     height: 100%;
-    font-family: Fundamental_Brigade, Arial, Georgia, sans-serif;
+    font-family: liberation_sans, Arial, Georgia, sans-serif;
     display: flex;
     justify-content: center;
 }
