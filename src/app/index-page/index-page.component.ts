@@ -47,8 +47,9 @@ export class IndexPageComponent implements OnInit {
 
   // Pick a random line in the array and set new img src to it
   set_image(img_index:number=Math.floor(Math.random() * this.rand_images.length)): void{
-    location.hash = String(img_index);
     this.curr_image = this.rand_images[img_index];
+    location.hash = String(img_index);
+    console.log(this)
   }
 
   // Parse URL fragment on page load and take appropriate action
@@ -65,12 +66,10 @@ export class IndexPageComponent implements OnInit {
 
   constructor() {
     this.curr_image = this.rand_images[5];
-    console.log(this)
    }
 
   ngOnInit(): void {
     this.check_fragment();
-    window.onhashchange = this.check_fragment;
   }
 
 }
