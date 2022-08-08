@@ -26,11 +26,6 @@ body {
     justify-content: center;
 }
 
-.page_div {
-  display: flex;
-  flex-flow: column;
-}
-
 .title_div {
     margin-left: auto;
     margin-right: auto;
@@ -39,10 +34,7 @@ body {
 }
 
 .social_buttons_div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 6px;
+    margin-bottom: 3px;
 }
 
 .img_div {
@@ -69,7 +61,6 @@ body {
     width: 30px;
     text-align: center;
     text-decoration: none;
-    flex: 0 0 30px;
   }
   
   .fa:hover {
