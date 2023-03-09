@@ -43,6 +43,12 @@ body {
     margin-right: auto;
 }
 
+.extra_text_div {
+  max-width: max(50vw, 375px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #wip_image {
     background-color: #333333;
     max-width: max(28vw, 320px);
