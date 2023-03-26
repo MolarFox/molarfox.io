@@ -18,22 +18,38 @@ import { ProjectSummary } from 'layouts/Home/ProjectSummary';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 
+const randomise_disciplines = true
 const disciplines = [
   'Radio Operator', 
   '3D Modeler',
-  '3D Printerist', 
   'Tinkerer', 
-  'Modder',
-  'Backend Developer',
-  'Fox',
   'Guitarist',
+  'Python Dev',
+  'Ruby Dev',
+  'Scala Dev',
+  'Maker',
+  'Modder',
+  'Fullstack Dev',
+  'DevOps Engie',
+  'Fox',
   'Hacker',
+  'AWS Cloud Dev',
+  'Arduino Dev',
   'Photographer'
 ];
+
+function RandomiseIterable(arr) {
+  return arr
+  .map(value => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value)
+}
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
+  const [display_disciplines, randomiseDisciplines] = useState(disciplines)
+
   const intro = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
@@ -42,6 +58,8 @@ export const Home = () => {
 
   useEffect(() => {
     const sections = [intro, projectOne, projectTwo, projectThree, details];
+
+    randomiseDisciplines(randomise_disciplines ? RandomiseIterable(disciplines) : disciplines)
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -86,7 +104,7 @@ export const Home = () => {
       <Intro
         id="intro"
         sectionRef={intro}
-        disciplines={disciplines}
+        disciplines={display_disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
       <ProjectSummary
