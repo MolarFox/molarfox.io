@@ -21,21 +21,24 @@ import styles from './Home.module.css';
 const randomise_disciplines = true
 const disciplines = [
   'Radio Operator', 
-  '3D Modeler',
-  'Tinkerer', 
+  'Fox',
+  'Photographer',
   'Guitarist',
+  'Maker',
+  'Modder',
+  '3D Modeler',
+  'Tinkerer',
+  '3D Printerist',
   'Python Dev',
   'Ruby Dev',
   'Scala Dev',
-  'Maker',
-  'Modder',
   'Fullstack Dev',
-  'DevOps Engie',
-  'Fox',
-  'Hacker',
   'AWS Cloud Dev',
   'Arduino Dev',
-  'Photographer'
+  'Data Engineer',
+  'DevOps Engineer',
+  'Leader',
+  'Cybersecurity Analyst',
 ];
 
 function RandomiseIterable(arr) {
