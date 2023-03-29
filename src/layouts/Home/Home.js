@@ -21,12 +21,13 @@ const disciplines = [
   'Ruby Dev',
   'Scala Dev',
   'Fullstack Dev',
+  'Kotlin Dev',
+  'DevOps',
+  'Rust Dev',
+  'C++ Dev',
   'AWS Cloud Dev',
   'Arduino Dev',
-  'Data Engineer',
-  'DevOps Engineer',
   'Leader',
-  'Cybersecurity Analyst',
 ];
 
 function RandomiseIterable(arr) {
@@ -88,9 +89,11 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <Meta
-        title="Designer + Developer"
-        description="Design portfolio of Hamish Williams — a product designer working on web & mobile
-          apps with a focus on motion, experience design, and accessibility."
+        title="Software & ECSE Engineer"
+        description="Portfolio and personal site of MolarFox / RJ: 
+          A Melbourne based software engineer with a passion for learning, and an eye for optimisation.
+          Interests include Amateur Radio, 3D Printing, Cybersecurity, Music, 4x4 Off-Roading, Hiking, and Tinkering.
+          "
       />
       <Intro
         id="intro"
