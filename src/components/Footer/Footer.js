@@ -10,8 +10,9 @@ export const Footer = ({ className }) => (
         {`© ${new Date().getFullYear()} MolarFox.`}
       </span>
       <Link secondary className={styles.link} href="/humans.txt" target="_self">
-        Crafted by yours truly
+        Attributions
       </Link>
     </Text>
   </footer>
 );
+ 
