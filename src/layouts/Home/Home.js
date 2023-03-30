@@ -26,8 +26,7 @@ const disciplines = [
   'Rust Dev',
   'C++ Dev',
   'AWS Cloud Dev',
-  'Arduino Dev',
-  'Leader',
+  'Arduino Dev'
 ];
 
 function RandomiseIterable(arr) {

@@ -25,13 +25,13 @@ export const socialLinks = [
   },
   {
     label: 'Thingiverse',
-    url: 'https://github.com/MolarFox',
-    icon: 'error',
+    url: 'https://www.thingiverse.com/molarfox',
+    icon: 'thingiverse',
   },
   {
     label: 'Fediverse',
-    url: 'https://github.com/MolarFox',
-    icon: 'error',
+    url: 'https://furry.engineer/@MolarFox',
+    icon: 'mastodon',
   },
   {
     label: 'Twitter',
