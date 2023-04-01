@@ -7,6 +7,10 @@ export const navLinks = [
     label: 'Details',
     pathname: '/#details',
   },
+  {
+    label: 'Blog',
+    pathname: 'https://blog.molarfox.io/',
+  },
   // {
   //   label: 'Shop',
   //   pathname: 'https://shop.molarfox.io',
