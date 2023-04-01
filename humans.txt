@@ -1,0 +1,53 @@
+__  __  __
+\ \ \ \ \/
+ \ \/\ \
+  \/  \/
+
+The humans.txt file explains the team, technology,
+and graphic assets behind this site humanstxt.org.
+
+_______________________________________________________________________________
+
+FORKER / SITE OWNER | フォーカー / ウェブサイトのメンテナー
+
+MolarFox (RJ)
+
+Fox by day, fox by night too.
+
+github.com/MolarFox
+thingiverse.com/molarfox
+bandcamp.com/MolarFox
+flag{of-foxes-and-humans-0x49d9e}
+furry.engineer/@MolarFox
+twitter.com/MolarFox
+
+_______________________________________________________________________________
+
+DESIGNER | デザイナー
+
+Hamish Williams
+Hand crafted design & web development
+
+Design tools:
+Figma
+Photoshop
+Blender
+
+twitter.com/hamishmw
+github.com/hamishmw
+
+_______________________________________________________________________________
+
+TECHNOLOGY | テクノロジー
+
+React
+Next.js
+Three.js
+Framer Motion
+
+_______________________________________________________________________________
+
+FONTS | フォント
+
+Gotham
+Hiragino Kaku Gothic
