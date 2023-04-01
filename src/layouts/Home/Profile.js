@@ -1,7 +1,7 @@
 import profileKatakana from 'assets/katakana-profile.svg?url';
-import profileImgLarge from 'assets/profile-large.jpg';
-import profileImgPlaceholder from 'assets/profile-placeholder.jpg';
-import profileImg from 'assets/profile.jpg';
+import MolarHeadshotImg from 'assets/molar-headshot.jpeg';
+import MolarHeadshotImgLarge from 'assets/molar-headshot.png';
+import MolarHeadshotImgPlaceholder from 'assets/molar-headshot-placeholder.jpeg';
 import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
@@ -18,13 +18,17 @@ import styles from './Profile.module.css';
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="G'day" start={visible} delay={500} />
+      <DecoderText text="G'Day!" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I'm molar, the fox. Here's stuff I use <Link href="/uses">uses page</Link>.
+      I'm RJ, aka MolarFox: a Melbourne-based software engineer, amateur radio operator, and tinkerer. 
+      In my day-to-day here in my current role at <Link href="https://www.lexer.io/">Lexer</Link>, I regularly bounce from software engineer to devops engineer, data scientist, and fullstack webapp dev to build, maintain, and oversee the dataflows through our system and its 85+ integrations.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      This is another paragraph.
+      In my spare time you'll find me hiking up hills with my QRP radio gear, 3D printing my growing army of plastic foxes, playing <Link href="https://steamcommunity.com/id/MolarFox/">video games</Link>, and making bottled chaos in my workshop.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      Here's my <Link href="/404">gallery</Link>, my <Link href="https://blog.molarfox.io/">blog</Link>, and my list of <Link href="/404">preferred tools and gear</Link>. Chuck me a message, I'd love to hear from you!
     </Text>
   </Fragment>
 );
@@ -75,10 +79,10 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 <Image
                   reveal
                   delay={100}
-                  placeholder={profileImgPlaceholder}
-                  srcSet={[profileImg, profileImgLarge]}
+                  placeholder={MolarHeadshotImgPlaceholder}
+                  srcSet={[MolarHeadshotImg, MolarHeadshotImgLarge]}
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="Me standing in front of the Torii on Miyajima, an island off the coast of Hiroshima in Japan"
+                  alt="Digital artwork of me / my fox character, Molar. He's depicted in this headshot in his bright orange / dark grey fur, with goggles on his head, a smiling expression, and a leather jacket on. Artwork by efi"
                 />
                 <svg
                   aria-hidden="true"
@@ -88,7 +92,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   className={styles.svg}
                   data-visible={visible}
                 >
-                  <use href={`${profileKatakana}#katakana-profile`} />
+                  {/* <use href={`${profileKatakana}#katakana-profile`} /> */}
                 </svg>
               </div>
             </div>
