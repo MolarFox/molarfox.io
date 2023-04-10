@@ -2,7 +2,6 @@ import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
 import { Profile } from 'layouts/Home/Profile';
-import { ProjectSummary } from 'layouts/Home/ProjectSummary';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 
@@ -42,9 +41,6 @@ export const Home = () => {
   const [display_disciplines, randomiseDisciplines] = useState(disciplines)
 
   const intro = useRef();
-  const projectOne = useRef();
-  const projectTwo = useRef();
-  const projectThree = useRef();
   const details = useRef();
 
   useEffect(() => {
