@@ -18,6 +18,7 @@ import styles from './Contact.module.css';
 export const Contact = () => {
   const errorRef = useRef();
   const email = useFormInput('');
+  const name = useFormInput('');
   const message = useFormInput('');
   const [sending, setSending] = useState(false);
   const [complete, setComplete] = useState(false);
@@ -92,9 +93,9 @@ export const Contact = () => {
               data-status={status}
               style={getDelay(tokens.base.durationXS, initDelay)}
               autoComplete="email"
-              label="Your Email"
+              label="Email"
               type="email"
-              maxLength={512}
+              maxLength={128}
               {...email}
             />
             <Input
