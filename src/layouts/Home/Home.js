@@ -5,7 +5,7 @@ import { Profile } from 'layouts/Home/Profile';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 
-const randomise_disciplines = true
+const randomise_disciplines = true;
 const disciplines = [
   'Radio Operator', 
   'Fox',
@@ -32,13 +32,13 @@ function RandomiseIterable(arr) {
   return arr
   .map(value => ({ value, sort: Math.random() }))
   .sort((a, b) => a.sort - b.sort)
-  .map(({ value }) => value)
+  .map(({ value }) => value);
 }
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
-  const [display_disciplines, randomiseDisciplines] = useState(disciplines)
+  const [display_disciplines, randomiseDisciplines] = useState(disciplines);
 
   const intro = useRef();
   const details = useRef();
@@ -46,7 +46,7 @@ export const Home = () => {
   useEffect(() => {
     const sections = [intro, details];
 
-    randomiseDisciplines(randomise_disciplines ? RandomiseIterable(disciplines) : disciplines)
+    randomiseDisciplines(randomise_disciplines ? RandomiseIterable(disciplines) : disciplines);
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
