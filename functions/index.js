@@ -10,16 +10,25 @@ const app = express();
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
 
-const ses = new aws.SES({
-  region: 'us-east-1',
-});
-
-const ORIGINS = ['https://hamishw.com', 'https://www.hamishw.com'];
-const MAX_EMAIL_LENGTH = 512;
+const ORIGINS = ['https://molarfox.io', 'https://www.molarfox.io'];
+const MAX_EMAIL_LENGTH = 128;
 const MAX_MESSAGE_LENGTH = 4096;
-const EMAIL = 'hello@hamishw.com';
-const FROM_EMAIL = 'mailbot@hamishw.com';
+const EMAIL = 'contact_form@molarfox.io';
+const FROM_EMAIL = 'mailbot@molarfox.io';
 const EMAIL_PATTERN = /(.+)@(.+){2,}\.(.+){2,}/;
+
+
+const nodemailer = require("nodemailer");
+let testAccount = await nodemailer.createTestAccount();
+let transporter = nodemailer.createTransport({
+  host: "smtp.ethereal.email",
+  port: 587,
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: testAccount.user, // generated ethereal user
+    pass: testAccount.pass, // generated ethereal password
+  },
+});
 
 app.use(helmet());
 app.use(express.json());
@@ -64,19 +73,13 @@ app.post('/message', async (req, res) => {
       });
     }
 
-    // Send email using AWS SES
-    await ses.sendEmail({
-      Source: `Portfolio <${FROM_EMAIL}>`,
-      Destination: {
-        ToAddresses: [EMAIL],
-      },
-      Message: {
-        Subject: { Data: `New message from ${email}` },
-        Body: {
-          Text: { Data: `From: ${email}\n\n${message}` },
-        },
-      },
-    });
+    // Send email using nodemailer
+    let resp = await transporter.sendMail({
+      from: `contact_form molarfox.io <${FROM_EMAIL}>`,
+      to: EMAIL,
+      subject: "[contact_form] molarfox.io visitor message",
+      text: `From: ${email}\n\n${message}`,
+    })
 
     return res.status(200).json({ message: 'Message sent successfully' });
   } catch (error) {

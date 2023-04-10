@@ -1,4 +1,4 @@
-service: hamish-portfolio
+service: molarfox-io
 
 provider:
   name: aws
@@ -11,10 +11,6 @@ functions:
   headers:
     handler: headers.handler
     architecture: x86_64
-    events:
-      - cloudFront:
-          eventType: origin-response
-          origin: https://d39w4n5rrkxzvy.cloudfront.net
   api:
     handler: index.handler
     architecture: arm64
