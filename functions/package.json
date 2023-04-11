@@ -1,10 +1,11 @@
 {
   "name": "functions",
-  "description": "Serverless functions for hamishw.com using AWS lambda",
+  "description": "Serverless functions for molarfox.io using AWS lambda",
   "scripts": {
     "deploy": "serverless deploy --stage production",
     "deploy:api": "serverless deploy function --function api --stage production",
-    "deploy:headers": "serverless deploy function --function headers --stage production"
+    "deploy:headers": "serverless deploy function --function headers --stage production",
+    "remove": "serverless remove --stage production"
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.145.0",
@@ -13,6 +14,7 @@
     "express": "^4.18.1",
     "helmet": "^5.1.1",
     "jsdom": "^20.0.0",
+    "serverless": "^3.30.1",
     "serverless-http": "^3.0.2"
   },
   "devDependencies": {

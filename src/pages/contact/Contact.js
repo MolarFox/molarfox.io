@@ -18,6 +18,7 @@ import styles from './Contact.module.css';
 export const Contact = () => {
   const errorRef = useRef();
   const email = useFormInput('');
+  const name = useFormInput('');
   const message = useFormInput('');
   const [sending, setSending] = useState(false);
   const [complete, setComplete] = useState(false);
@@ -33,7 +34,7 @@ export const Contact = () => {
     try {
       setSending(true);
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/message`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -50,6 +51,7 @@ export const Contact = () => {
       const statusError = getStatusError({
         status: response?.status,
         errorMessage: responseMessage?.error,
+        errorDetail: responseMessage?.detail,
         fallback: 'There was a problem sending your message',
       });
 
@@ -67,7 +69,7 @@ export const Contact = () => {
     <Section className={styles.contact}>
       <Meta
         title="Contact"
-        description="Send me a message if you’re interested in discussing a project or if you just want to say hi"
+        description="Send me a message for any reason, anytime. Especially if you've got something cool to share"
       />
       <Transition unmount in={!complete} timeout={1600}>
         {(visible, status) => (
@@ -92,9 +94,9 @@ export const Contact = () => {
               data-status={status}
               style={getDelay(tokens.base.durationXS, initDelay)}
               autoComplete="email"
-              label="Your Email"
+              label="Email"
               type="email"
-              maxLength={512}
+              maxLength={128}
               {...email}
             />
             <Input
@@ -184,14 +186,20 @@ export const Contact = () => {
 function getStatusError({
   status,
   errorMessage,
+  errorDetail,
   fallback = 'There was a problem with your request',
 }) {
-  if (status === 200) return false;
+  if (status === 201) return false;
 
   const statuses = {
     500: 'There was a problem with the server, try again later',
+    400: 'There was a problem validating your form submission. Please check your answers and retry',
     404: 'There was a problem connecting to the server. Make sure you are connected to the internet',
   };
+
+  if (errorDetail) {
+    return errorDetail;
+  }
 
   if (errorMessage) {
     return errorMessage;

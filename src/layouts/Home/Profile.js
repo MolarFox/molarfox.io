@@ -1,4 +1,3 @@
-import profileKatakana from 'assets/katakana-profile.svg?url';
 import MolarHeadshotImg from 'assets/molar-headshot.jpeg';
 import MolarHeadshotImgLarge from 'assets/molar-headshot.png';
 import MolarHeadshotImgPlaceholder from 'assets/molar-headshot-placeholder.jpeg';
@@ -25,10 +24,10 @@ const ProfileText = ({ visible, titleId }) => (
       In my day-to-day here in my current role at <Link href="https://www.lexer.io/">Lexer</Link>, I regularly bounce from software engineer to devops engineer, data scientist, and fullstack webapp dev to build, maintain, and oversee the dataflows through our system and its 85+ integrations.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time you&apos;ll find me hiking up hills with my QRP radio gear, 3D printing my growing army of plastic foxes, playing <Link href="https://steamcommunity.com/id/MolarFox/">video games</Link>, and making bottled chaos in my workshop.
+      In my spare time you&apos;ll find me hiking up hills with my QRP radio gear, 3D printing my growing army of plastic foxes, playing <Link href="https://steamcommunity.com/id/MolarFox/">video games</Link>, listening to <Link href="https://bandcamp.com/molarfox">music</Link>, and making bottled chaos in my workshop.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Here&apos;s my <Link href="/404">gallery</Link>, my <Link href="https://blog.molarfox.io/">blog</Link>, and my list of <Link href="/404">preferred tools and gear</Link>. Chuck me a message, I&apos;d love to hear from you!
+      Here&apos;s my <Link href="/404">gallery</Link>, my <Link href="https://blog.molarfox.io/">blog</Link>, and my list of <Link href="/404">preferred tools and gear</Link>.
     </Text>
   </Fragment>
 );
