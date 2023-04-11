@@ -51,6 +51,7 @@ export const Contact = () => {
       const statusError = getStatusError({
         status: response?.status,
         errorMessage: responseMessage?.error,
+        errorDetail: responseMessage?.detail,
         fallback: 'There was a problem sending your message',
       });
 
@@ -185,14 +186,20 @@ export const Contact = () => {
 function getStatusError({
   status,
   errorMessage,
+  errorDetail,
   fallback = 'There was a problem with your request',
 }) {
-  if (status === 200) return false;
+  if (status === 201) return false;
 
   const statuses = {
     500: 'There was a problem with the server, try again later',
+    400: 'There was a problem validating your form submission. Please check your answers and retry',
     404: 'There was a problem connecting to the server. Make sure you are connected to the internet',
   };
+
+  if (errorDetail) {
+    return errorDetail;
+  }
 
   if (errorMessage) {
     return errorMessage;
