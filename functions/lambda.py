@@ -71,7 +71,7 @@ def validate_input(email, message) -> Optional[dict]:
             "statusCode": 400,
             "body": json.dumps({
                 "error": "Invalid request body",
-                "detail": f"Email must be fewer than {MAX_EMAIL_LENGTH} bytes in length"
+                "detail": f"Email must be fewer than {MAX_EMAIL_LENGTH} characters in length"
             })
         }
         
@@ -80,7 +80,7 @@ def validate_input(email, message) -> Optional[dict]:
             "statusCode": 400,
             "body": json.dumps({
                 "error": "Invalid request body",
-                "detail": f"Message must be fewer than {MAX_MESSAGE_LENGTH} bytes in length"
+                "detail": f"Message must be fewer than {MAX_MESSAGE_LENGTH} characters in length"
             })
         }
         
@@ -89,21 +89,22 @@ def validate_input(email, message) -> Optional[dict]:
             "statusCode": 400,
             "body": json.dumps({
                 "error": "Invalid request body",
-                "detail": f"Email format was not considered valid"
+                "detail": "Email format is not valid"
             })
         }
     
 
 def send_email_ses(email, message) -> str:
     ses = boto3.client('sesv2')
-    msg = f"--From: {email} --\n\n{message}"
+    msg = f"--From: {email} --<br><br>{message}".replace("\r", "").replace("\n", "<br>\n")
     
     resp = ses.send_email(
         FromEmailAddress=os.environ["SOURCE_EMAIL"],
+        ReplyToAddresses=[email],
         Destination={"ToAddresses": [os.environ["DESTINATION_EMAIL"]]},
         Content={
             "Simple": {
-                "Subject": {"Data": f"[contact_form] molarfox.io message from {email}"},
+                "Subject": {"Data": f"[contact_form] molarfox.io - {email}"},
                 "Body": {"Text": {"Data": msg}, "Html": {"Data": msg}}
             }
         }
