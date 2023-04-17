@@ -8,21 +8,22 @@ export const navLinks = [
     pathname: '/#details',
   },
   {
+    label: 'Contact',
+    pathname: '/contact',
+  },
+  // {
+  //   label: 'Gallery',
+  //   pathname: '/gallery',
+  // }
+  {
     label: 'Blog',
+    is_outlink: true,
     pathname: 'https://blog.molarfox.io/',
   },
   // {
   //   label: 'Shop',
   //   pathname: 'https://shop.molarfox.io',
-  // },
-  // {
-  //   label: 'Gallery',
-  //   pathname: '/gallery',
-  // },
-  {
-    label: 'Contact',
-    pathname: '/contact',
-  },
+  // }
 ];
 
 export const socialLinks = [
