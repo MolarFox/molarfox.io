@@ -104,7 +104,7 @@ def send_email_ses(email, message) -> str:
         Destination={"ToAddresses": [os.environ["DESTINATION_EMAIL"]]},
         Content={
             "Simple": {
-                "Subject": {"Data": f"[contact_form] molarfox.io - {email}"},
+                "Subject": {"Data": f"[contact_form] {email} - molarfox.io"},
                 "Body": {"Text": {"Data": msg}, "Html": {"Data": msg}}
             }
         }

@@ -12,7 +12,6 @@ const disciplines = [
   'Photographer',
   'Guitarist',
   'Maker',
-  'Modder',
   '3D Modeler',
   'Tinkerer',
   '3D Printerist',
@@ -21,11 +20,12 @@ const disciplines = [
   'Scala Dev',
   'Fullstack Dev',
   'Kotlin Dev',
-  'DevOps',
+  'DevOps Engineer',
   'Rust Dev',
   'C++ Dev',
   'AWS Cloud Dev',
-  'Arduino Dev'
+  'Arduino Dev',
+  '4x4 Enthusiast',
 ];
 
 function RandomiseIterable(arr) {
@@ -86,8 +86,7 @@ export const Home = () => {
       <Meta
         title="Software & ECSE Engineer"
         description="Portfolio and personal site of MolarFox / RJ: 
-          A Melbourne based software engineer with a passion for learning, and an eye for optimisation.
-          Interests include Amateur Radio, 3D Printing, Cybersecurity, Music, 4x4 Off-Roading, Hiking, and Tinkering.
+          A Melbourne based software engineer and creator. Fox by day, fox also by night.
           "
       />
       <Intro
