@@ -168,7 +168,7 @@ export const Navbar = () => {
                 onClick={handleNavItemClick}
               >
                 {label}
-                {is_outlink && <FontAwesomeIcon icon={faExternalLink}/>}
+                {is_outlink && <FontAwesomeIcon style={{marginLeft: 10 + 'px'}} icon={faExternalLink}/>}
               </a>
             </RouterLink>
           ))}
