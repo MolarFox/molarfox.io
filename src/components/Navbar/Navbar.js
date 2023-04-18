@@ -192,7 +192,7 @@ export const Navbar = () => {
                   })}
                 >
                   {label}
-                  {is_outlink && <FontAwesomeIcon  icon={faExternalLink}/>}
+                  {is_outlink && <FontAwesomeIcon style={{marginLeft: 8 + 'px'}} size={"sm"} icon={faExternalLink}/>}
                 </a>
               </RouterLink>
             ))}
