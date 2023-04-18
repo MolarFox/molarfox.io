@@ -116,6 +116,7 @@ export const Contact = () => {
             />
             <ReCAPTCHA
               ref={recaptchaRef}
+              theme="dark"
               size="invisible"
               sitekey="6Lfg1pklAAAAANnZyJAa43PXj4zcXGORynUZQEtz"
             />
