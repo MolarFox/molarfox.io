@@ -38,12 +38,16 @@
     "stylelint-config-standard": "^26.0.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "framer-motion": "^7.1.0",
     "mdx-bundler": "^9.0.1",
     "next": "^12.2.5",
     "nodemailer": "^6.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^2.1.0",
     "three": "^0.146.0",
     "three-stdlib": "^2.18.1"
   },
@@ -53,8 +57,6 @@
     "build:storybook": "build-storybook -o build-storybook && node scripts/draco-storybook",
     "predeploy": "npm run build",
     "deploy": "gh-pages -t true -d build",
-    "deploy:lambda": "aws s3 sync --delete build/ s3://hamish-portfolio-site",
-    "deploy:storybook": "aws s3 sync --delete build-storybook s3://hamish-portfolio-storybook",
     "deploy:functions": "cd functions && npm run deploy",
     "start": "next start",
     "test": "echo 'write some tests'",

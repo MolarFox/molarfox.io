@@ -13,12 +13,13 @@ import { Transition } from 'components/Transition';
 import { useFormInput } from 'hooks';
 import { useRef, useState } from 'react';
 import { cssProps, msToNum, numToMs } from 'utils/style';
+import ReCAPTCHA from "react-google-recaptcha";
 import styles from './Contact.module.css';
 
 export const Contact = () => {
   const errorRef = useRef();
+  const recaptchaRef = useRef();
   const email = useFormInput('');
-  const name = useFormInput('');
   const message = useFormInput('');
   const [sending, setSending] = useState(false);
   const [complete, setComplete] = useState(false);
@@ -34,6 +35,8 @@ export const Contact = () => {
     try {
       setSending(true);
 
+      const token = await recaptchaRef.current.executeAsync();
+
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
         method: 'POST',
         mode: 'cors',
@@ -43,6 +46,7 @@ export const Contact = () => {
         body: JSON.stringify({
           email: email.value,
           message: message.value,
+          recaptcha_token: token
         }),
       });
 
@@ -110,6 +114,12 @@ export const Contact = () => {
               maxLength={4096}
               {...message}
             />
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              theme="dark"
+              size="invisible"
+              sitekey="6Lfg1pklAAAAANnZyJAa43PXj4zcXGORynUZQEtz"
+            />
             <Transition in={statusError} timeout={msToNum(tokens.base.durationM)}>
               {errorStatus => (
                 <div
@@ -162,7 +172,7 @@ export const Contact = () => {
               data-status={status}
               style={getDelay(tokens.base.durationXS)}
             >
-              I’ll get back to you within a couple days, sit tight
+              Cheers for getting in touch, I’ll get back to you within a couple of days
             </Text>
             <Button
               secondary

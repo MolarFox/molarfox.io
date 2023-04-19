@@ -13,6 +13,11 @@ import styles from './Navbar.module.css';
 import { ThemeToggle } from './ThemeToggle';
 import { navLinks, socialLinks } from './navData';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+
 export const Navbar = () => {
   const [current, setCurrent] = useState();
   const [target, setTarget] = useState();
@@ -145,7 +150,7 @@ export const Navbar = () => {
         <a
           data-navbar-item
           className={styles.logo}
-          aria-label="Hamish Williams, Designer"
+          aria-label="MolarFox, Engineer"
           onClick={handleMobileNavClick}
         >
           <Monogram highlight />
@@ -154,7 +159,7 @@ export const Navbar = () => {
       <NavToggle onClick={() => dispatch({ type: 'toggleMenu' })} menuOpen={menuOpen} />
       <nav className={styles.nav}>
         <div className={styles.navList}>
-          {navLinks.map(({ label, pathname }) => (
+          {navLinks.map(({ label, pathname, is_outlink }) => (
             <RouterLink href={pathname} scroll={false} key={label}>
               <a
                 data-navbar-item
@@ -163,6 +168,7 @@ export const Navbar = () => {
                 onClick={handleNavItemClick}
               >
                 {label}
+                {is_outlink && <FontAwesomeIcon style={{marginLeft: 8 + 'px'}} size={"sm"} icon={faExternalLink}/>}
               </a>
             </RouterLink>
           ))}
@@ -172,7 +178,7 @@ export const Navbar = () => {
       <Transition unmount in={menuOpen} timeout={msToNum(tokens.base.durationL)}>
         {visible => (
           <nav className={styles.mobileNav} data-visible={visible}>
-            {navLinks.map(({ label, pathname }, index) => (
+            {navLinks.map(({ label, pathname, is_outlink }, index) => (
               <RouterLink href={pathname} scroll={false} key={label}>
                 <a
                   className={styles.mobileNavLink}
@@ -186,6 +192,7 @@ export const Navbar = () => {
                   })}
                 >
                   {label}
+                  {is_outlink && <FontAwesomeIcon style={{marginLeft: 8 + 'px'}} size={"sm"} icon={faExternalLink}/>}
                 </a>
               </RouterLink>
             ))}
