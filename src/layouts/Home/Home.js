@@ -9,11 +9,8 @@ const randomise_disciplines = true;
 const disciplines = [
   'Radio Operator', 
   'Fox',
-  'Photographer',
   'Guitarist',
   'Maker',
-  '3D Modeler',
-  'Tinkerer',
   '3D Printerist',
   'Python Dev',
   'Ruby Dev',
