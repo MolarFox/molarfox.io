@@ -20,8 +20,7 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="G'Day!" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I&apos;m RJ, aka MolarFox: a Melbourne-based software engineer, amateur radio operator, and tinkerer. 
-      In my day-to-day here in my current role at <Link href="https://www.lexer.io/">Lexer</Link>, I regularly bounce from software engineer to devops engineer, data scientist, and fullstack webapp dev to build, maintain, and oversee the dataflows through our system and its 85+ integrations.
+      I&apos;m RJ, aka MolarFox: a Melbourne-based software engineer, amateur radio operator, and tinkerer.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
       In my spare time you&apos;ll find me hiking up hills with my QRP radio gear, 3D printing my growing army of plastic foxes, playing <Link href="https://steamcommunity.com/id/MolarFox/">video games</Link>, listening to <Link href="https://bandcamp.com/molarfox">music</Link>, and building stuff in my workshop.
